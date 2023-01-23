@@ -4,10 +4,12 @@ import com.tweteroo.api.dto.UserDTO;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "users")
+@NoArgsConstructor
 public class User {
 
     public User(UserDTO data) {
