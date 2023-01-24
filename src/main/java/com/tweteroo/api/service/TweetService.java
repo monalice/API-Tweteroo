@@ -1,6 +1,6 @@
 package com.tweteroo.api.service;
 
-import java.util.Optional;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +32,15 @@ public class TweetService {
             repository.findAll(),
             pageRequest, size
         );
+    }
+
+    public List<Tweet> getTweetsByUser(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+
+        if(user.isPresent()) {
+            return repository.findByUsername(username);
+        }
+        return List.of();
     }
 
     public Tweet createTweet(TweetDTO req) {
