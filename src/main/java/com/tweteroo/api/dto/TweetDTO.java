@@ -1,5 +1,17 @@
 package com.tweteroo.api.dto;
 
-public record TweetDTO(String username, String avatar, String text) {
-    
-}
+import org.hibernate.validator.constraints.URL;
+
+import jakarta.validation.constraints.NotBlank;
+
+public record TweetDTO(
+    @NotBlank
+    String username,
+
+    @NotBlank
+    @URL
+    String avatar,
+
+    @NotBlank
+    String text
+    ) {}
