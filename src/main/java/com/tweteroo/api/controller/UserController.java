@@ -28,8 +28,13 @@ public class UserController {
     }
 
     @PostMapping("/sign-up")
-    // @ResponseStatus(code = HttpStatus.CREATED)
-    public void create(@RequestBody UserDTO req) {
-        service.createUser(req);
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public String create(@RequestBody UserDTO req) {
+        User user = service.createUser(req);
+        if(user != null){
+            return "OK";
+        } else {
+            return "Error!";
+        }
     }
 }

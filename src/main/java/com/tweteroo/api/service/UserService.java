@@ -19,7 +19,7 @@ public class UserService {
         return repository.findAll();
     }
 
-    public void createUser(UserDTO req) {
-        repository.save(new User(req));
+    public User createUser(UserDTO req) {
+        return repository.save(new User(req));
     }
 }
