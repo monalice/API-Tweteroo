@@ -4,10 +4,12 @@ import com.tweteroo.api.dto.TweetDTO;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "tweets")
+@NoArgsConstructor
 public class Tweet {
 
     public Tweet (TweetDTO data) {
