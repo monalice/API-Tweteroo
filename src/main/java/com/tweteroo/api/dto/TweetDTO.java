@@ -13,5 +13,5 @@ public record TweetDTO(
     String avatar,
 
     @NotBlank
-    String text
+    String tweet
     ) {}
